@@ -47,6 +47,7 @@ function App() {
   const [ethersProvider, setEthersProvider] = useState<any | null>(null);
   const [signer, setSigner] = useState<any | null>(null);
   const [linkText, setLinkText] = useState<any | null>(null)
+  const [bannerText, setBannerText] = useState<any | null>(null)
 
   useEffect(() => {
     if (wallet) {
@@ -64,8 +65,10 @@ function App() {
   useEffect(() => {
     if(window.location.href.includes('scam-education')) {
       setLinkText('Blocklist site here');
+      setBannerText('Allowlist');
     } else if(window.location.href.includes('scam-edu-blocklist')) {
       setLinkText('Allowlist site here');
+      setBannerText('Blocklist');
     }
   })
 
@@ -174,9 +177,9 @@ function App() {
                 <Row>
                 </Row>
               </Container>
-              <Container style={{paddingBottom:15}}>
+              <Container style={{paddingTop:15}}>
                 <h4 style={{color: '#FF5300', 'fontWeight':'bold'}}>Allowlist Testing</h4>
-                <Row style={{paddingTop:15}}>
+                <Row>
                   <Col>
                     <Button onClick={() => ClaimTokensTest(account, signer)} style={{'font-size':15}}>Not allowlisted</Button>
                     <h5>Claims 10 tokens from a contract that is not allowlisted for this site.</h5>
@@ -191,9 +194,9 @@ function App() {
                   </Col>
                 </Row>
               </Container>
-              <Container style={{paddingBottom:15}}>
+              <Container style={{paddingTop:15}}>
                 <h4 style={{color:'#FF5300', 'fontWeight':'bold'}}>Misc</h4>
-                <Row style={{paddingTop:15}}>
+                <Row>
                   <Col>
                     <Button onClick={() => SendEth(account, signer)} style={{'font-size':15}}>Send ETH</Button>
                     <h5>Transfers .001 ETH to yourself.</h5>
@@ -210,11 +213,11 @@ function App() {
                     <h5>Do not confirm this transaction.</h5>
                     <h5>Contract you are interacting with is random and has not been audited.</h5>
                     <h5>Contract can be found
-                    <a href='https://etherscan.io/address/0x629dDd06dD282a6D65e4e9EB21eFA1A8CBd0Ddfe'> here</a>
+                    <a href='https://etherscan.io/address/0x42356411a8510df6f9dd340e3688667faad6498b'> here</a>
                     . Recently deployed contracts are found
                     <a href='https://etherscan.io/contractsVerified'> here.</a>
                     </h5>
-                    <h6>Updated 1/8/23</h6>
+                    <h6>Updated 1/21/23</h6>
                   </Col>
                 </Row>  
                 <Row>
