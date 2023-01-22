@@ -91,6 +91,7 @@ function App() {
           <Container>
             <Row>
               <Col style={{paddingTop:15}}>
+                <h5 style={{color:'#FF5300','fontWeight':'bold' }}>{bannerText}</h5>
                 <h4>This is meant for educational / testing purposes.</h4>
                 <h4 style={{color:'red', 'fontWeight':'bold', cursor:'pointer'}} onClick={DirectPage}>{linkText}</h4>
               </Col>
