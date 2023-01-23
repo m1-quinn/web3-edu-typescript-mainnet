@@ -86,7 +86,7 @@ function App() {
       <ThemeProvider theme={original}>
       <br style={{}}/>
       <Window className='window'>
-        <WindowHeader style={{'text-align':'left'}}>Scam Education</WindowHeader>
+        <WindowHeader style={{'text-align':'left'}}>Scam Education (ETH Mainnet)</WindowHeader>
         <div className='body'>
           <Container>
             <Row>
