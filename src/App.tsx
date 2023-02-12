@@ -5,6 +5,8 @@ import {useConnectWallet, init} from '@web3-onboard/react';
 import { ethers } from 'ethers';
 import { createClient } from "@reservoir0x/reservoir-kit-client"
 import injectedModule from '@web3-onboard/injected-wallets'
+import ledgerModule from '@web3-onboard/ledger'
+import walletConnectModule from '@web3-onboard/walletconnect'
 import { Container, Row, Col } from 'react-bootstrap';
 // @ts-ignore 
 import { Window, WindowHeader, Button } from 'react95';
@@ -22,9 +24,11 @@ import { DirectPage } from './helpers/linkOpener';
 
 const rpcUrl = `https://eth-mainnet.g.alchemy.com/v2/2keYns3kOrbdkxgnKgfqV7PnUvq2NzBX`;
 const injected = injectedModule()
+const ledger = ledgerModule()
+const walletConnect = walletConnectModule()
 
 init({
-  wallets: [injected],
+  wallets: [injected, ledger, walletConnect],
   chains: [
     {
       id: '0x1',
@@ -214,11 +218,11 @@ function App() {
                     <h5>Do not confirm this transaction.</h5>
                     <h5>Contract you are interacting with is random and has not been audited.</h5>
                     <h5>Contract can be found
-                    <a href='https://etherscan.io/address/0x42356411a8510df6f9dd340e3688667faad6498b'> here</a>
+                    <a href='https://etherscan.io/address/0xB9943E947B12b8Cd2F9F9ab7059b37Cd0ED23630'> here</a>
                     . Recently deployed contracts are found
                     <a href='https://etherscan.io/contractsVerified'> here.</a>
                     </h5>
-                    <h6>Updated 1/21/23</h6>
+                    <h6>Updated 2/12/23</h6>
                   </Col>
                 </Row>  
                 <Row>
